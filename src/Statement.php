@@ -142,7 +142,7 @@ class Statement
         // Code: 60, e.displayText() = DB::Exception: Table default.ZZZZZ doesn't exist., e.what() = DB::Exception
 
         if (preg_match("%Code: (\d+),\se\.displayText\(\) \=\s*DB\:\:Exception\s*:\s*(.*)(?:\,\s*e\.what|\(version).*%ius", $body, $mathes)) {
-            return ['code' => $mathes[1], 'message' => $mathes[2]];
+            return ['code' => $mathes[1], 'message' => $body];
         }
 
         return false;
